@@ -3,7 +3,6 @@ use std::io::{self, Write};
 
 fn main() {
     // Uncomment this block to pass the first stage
-    print!("$ ");
     let stdin=io::stdin();
     io::stdout().flush().unwrap();
 
