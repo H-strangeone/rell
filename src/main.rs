@@ -13,7 +13,13 @@ fn main() {
         let stdin=io::stdin();
         let mut input = String::new();
         stdin.read_line(&mut input).unwrap();
-        println!("{}: command not found", input.trim());
-    }
+        if input.trim().is_empty(){}
+        else if input.trim()=="exit"{
+            break;
+        }
+        else{
+            println!("{}: command not found", input.trim());
     
+        }
+    }
 }
