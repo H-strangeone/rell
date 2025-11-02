@@ -13,9 +13,21 @@ fn main() {
         let stdin=io::stdin();
         let mut input = String::new();
         stdin.read_line(&mut input).unwrap();
-        if input.trim().is_empty(){}
-        else if input.trim()=="exit" || input.trim()=="quit" || input.trim()=="exit 0" || input.trim()=="quit 0" || input.trim()=="exit 1"{
+        let input=input.trim();
+        if input.is_empty(){
+            continue;
+        }
+        else if input.starts_with("echo "){
+            let toout=input[5..].trim();
+            println!("{}", toout);
+        }
+        else if input=="exit" || input=="quit" || input=="exit 0" || input=="quit 0" || input=="exit 1"{
             break;
+        }
+        else if input=="help"{
+            println!("Available commands:");
+            println!("  help - Show this help message");
+            println!("  exit, quit, exit 0, quit 0, exit 1 - Exit the shell");
         }
         else{
             println!("{}: command not found", input.trim());
