@@ -21,6 +21,7 @@ fn main() {
             continue;
         }
         let builtin_cmds:HashSet<&str>=["exit","quit","help","exit 0","quit 0","exit 1","echo","type"].into_iter().collect();
+        let out:HashSet<&str>=["exit","quit","help","exit 0","quit 0","exit 1"].into_iter().collect();
         if input.starts_with("type "){
             let tocheck=input[5..].trim();
             if builtin_cmds.contains(tocheck){
@@ -34,7 +35,7 @@ fn main() {
             let toout=input[5..].trim();
             println!("{}", toout);
         }
-        else if input=="exit" || input=="quit" || input=="exit 0" || input=="quit 0" || input=="exit 1"{
+        else if out.contains(input){
             break;
         }
         else if input=="help"{
