@@ -14,7 +14,7 @@ fn main() {
         let mut input = String::new();
         stdin.read_line(&mut input).unwrap();
         if input.trim().is_empty(){}
-        else if input.trim()=="exit"{
+        else if input.trim()=="exit" || input.trim()=="quit" || input.trim()=="exit 0" || input.trim()=="quit 0" || input.trim()=="exit 1"{
             break;
         }
         else{
